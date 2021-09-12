@@ -9,8 +9,8 @@
   .col-sm-3.ms-0.ps-0
    = button_tag class: "btn btn-success text-white" do 
     = fa_icon 'search 2x'
+
+#results
 - if @stock
- .card.mt-4
-  %h5.card-header 
-   = render 'users/result'
+ = render 'users/result'
 

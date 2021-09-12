@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-9">
+    <div class="card mt-4">
+      <h5 class="card-header">
+        Codigo: <%= @stock.ticker %>
+      </h5>
+      <div class="card-body">
+        <h5 class="card-title">
+          Nome da Empresa: <%= @stock.name %>
+        </h5>
+        <p class="card-text">
+          Valor da Ação: US$<%= @stock.last_price %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
