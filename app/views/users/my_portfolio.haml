@@ -9,3 +9,13 @@
   .col-sm-3.ms-0.ps-0
    = button_tag class: "btn btn-success text-white" do 
     = fa_icon 'search 2x'
+- if @stock
+ .card.mt-4
+  %h5.card-header 
+   = @stock.ticker
+  .card-body 
+   %h5.card-title  
+    = @stock.name
+   %p.card-text 
+    = @stock.last_price
+   %a.btn.btn-primary{href: "#"} Go somewhere
