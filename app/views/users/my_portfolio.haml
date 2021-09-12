@@ -1,0 +1,11 @@
+%h1.mt-3 Meu Portfolio
+
+.search-area 
+ %h3 Procurar Ações
+= form_tag '#', method: :get do
+ .form-group.row
+  .col-sm-9.me-0.pe-0
+   = text_field_tag :stock, params[:stock], placeholder: "Codigo da ação", autofocus: true, class: "form-control form-control-lg"
+  .col-sm-3.ms-0.ps-0
+   = button_tag class: "btn btn-success text-white" do 
+    = fa_icon 'search 2x'
