@@ -2,7 +2,7 @@
 
 .search-area 
  %h3 Procurar Ações
-= form_tag search_stock_path, method: :get do
+= form_tag search_stock_path, remote: true, method: :get do
  .form-group.row
   .col-sm-9.me-0.pe-0
    = text_field_tag :stock, params[:stock], placeholder: "Codigo da ação", autofocus: true, class: "form-control form-control-lg"
@@ -12,10 +12,5 @@
 - if @stock
  .card.mt-4
   %h5.card-header 
-   = @stock.ticker
-  .card-body 
-   %h5.card-title  
-    = @stock.name
-   %p.card-text 
-    = @stock.last_price
-   %a.btn.btn-primary{href: "#"} Go somewhere
+   = render 'users/result'
+
