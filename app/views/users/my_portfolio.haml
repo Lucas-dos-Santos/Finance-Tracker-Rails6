@@ -10,9 +10,7 @@
    = button_tag class: "btn btn-success text-white" do 
     = fa_icon 'search 2x'
 
-#results
-= render 'users/result'
-.row.mt-3 
- .col-9 
- - if !@tracked_stocks.empty?
-  = render 'users/table'
+#results.mb-0.mt-0
+
+- if !@tracked_stocks.empty?
+ = render 'users/table'

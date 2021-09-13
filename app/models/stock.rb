@@ -20,4 +20,8 @@ class Stock < ApplicationRecord
       endpoint: 'https://sandbox.iexapis.com/v1'
     )
   end
+
+  def self.check_db(ticker)
+    where(ticker: ticker).first
+  end
 end

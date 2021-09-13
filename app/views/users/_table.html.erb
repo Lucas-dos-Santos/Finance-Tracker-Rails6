@@ -1,20 +1,24 @@
-<table class="table table-hover table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Codigo</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Preço US$</th>
-      <th scope="col">Opções>
-      </tr>
-    </thead>
-    <tbody>
-      <% @tracked_stocks.each do |stock| %>
+<div class="row mt-3">
+  <div class="col-9">
+    <table class="table table-hover table-bordered mt-0">
+      <thead>
         <tr>
-          <td> <%= stock.ticker %> </td>
-          <td> <%= stock.name %> </td>
-          <td> <%= stock.last_price %> </td>
-          <td>@mdo</td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+          <th scope="col">Codigo</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Preço US$</th>
+          <th scope="col">Opções>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tracked_stocks.each do |stock| %>
+            <tr>
+              <td> <%= stock.ticker.upcase %> </td>
+              <td> <%= stock.name %> </td>
+              <td> <%= stock.last_price %> </td>
+              <td>@mdo</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
