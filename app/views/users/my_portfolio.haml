@@ -1,6 +1,6 @@
 %h1.mt-3 Meu Portfolio
 
-.search-area 
+.search-area
  %h3.mb-3 Procurar Ações
 = form_tag search_stock_path, remote: true, method: :get do
  .form-group.row
@@ -12,4 +12,7 @@
 
 #results
 = render 'users/result'
-
+.row.mt-3 
+ .col-9 
+ - if !@tracked_stocks.empty?
+  = render 'users/table'
