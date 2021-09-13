@@ -17,6 +17,7 @@
           <p class="card-text">
             Valor da Ação: US$<%= @stock.last_price.to_f.round(5) %>
           </p>
+          <img src=<%= "https://storage.googleapis.com/iex/api/logos/#{@stock.ticker.upcase}.png" %> alt="ddd">
         </div>
       </div>
     </div>
