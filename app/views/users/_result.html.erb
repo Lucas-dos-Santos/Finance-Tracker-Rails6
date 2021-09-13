@@ -38,9 +38,9 @@
             Nome da Empresa: <%= @stock.name %>
           </h5>
           <p class="card-text">
-            Valor da Ação: US$<%= @stock.last_price.to_f.round(5) %>
+            Valor da Ação: US$<%= @stock.last_price.round(2) %>
           </p>
-          <img src=<%= "https://storage.googleapis.com/iex/api/logos/#{@stock.ticker.upcase}.png" %> alt="ddd">
+          <img src=<%= "https://storage.googleapis.com/iex/api/logos/#{@stock.ticker.upcase}.png" %> alt=<%= "#{@stock.ticker}.png"  %> >
         </div>
       </div>
     </div>

@@ -24,4 +24,9 @@ class Stock < ApplicationRecord
   def self.check_db(ticker)
     where(ticker: ticker).first
   end
+
+  def self.top_10
+    client = client_connect
+    client.stock_market_list(:mostactive)
+  end
 end

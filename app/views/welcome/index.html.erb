@@ -1,3 +1,20 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-<%= link_to "logout", destroy_user_session_path, method: :delete %>
+<h1 class="text-center mt-2 text-secondary">Top 10 Ações</h1>
+<div class="d-flex flex-wrap justify-content-center">
+  <% @top10.each do |stock| %>
+    <div class="card mt-4 card-top10 mx-2">
+      <div class="card-header bg-light">
+        <h5 class="pt-2 fw-normal">
+          Codigo: <%= stock.symbol.upcase %>
+        </h5>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title fw-normal">
+          Nome: <%= stock.company_name %>
+        </h5>
+        <p class="card-text">
+          Valor da Ação: US$<%= stock.latest_price.to_f.round(2) %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
