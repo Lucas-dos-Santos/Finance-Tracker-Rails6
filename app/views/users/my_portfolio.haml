@@ -1,7 +1,7 @@
 %h1.mt-3 Meu Portfolio
 
 .search-area 
- %h3 Procurar Ações
+ %h3.mb-3 Procurar Ações
 = form_tag search_stock_path, remote: true, method: :get do
  .form-group.row
   .col-sm-9.me-0.pe-0
@@ -11,6 +11,5 @@
     = fa_icon 'search 2x'
 
 #results
-- if @stock
- = render 'users/result'
+= render 'users/result'
 

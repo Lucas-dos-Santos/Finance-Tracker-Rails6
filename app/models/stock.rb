@@ -16,4 +16,6 @@ class Stock < ApplicationRecord
       endpoint: 'https://sandbox.iexapis.com/v1'
     )
   end
+
+ 
 end

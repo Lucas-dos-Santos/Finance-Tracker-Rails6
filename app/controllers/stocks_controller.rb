@@ -3,16 +3,21 @@ class StocksController < ApplicationController
     if params[:stock].present?
       @stock = Stock.new_lookup(params[:stock])
       if @stock
+        @stocker = Stock.client_connect
         respond_to do |format|
           format.js { render partial: 'users/result' }
         end
       else
-        flash[:alert] = "Não foi encontrado nenhuma ação com o codigo: #{params[:stock]}"
-        redirect_to my_portfolio_path
+        flash.now[:alert] = "Não foi encontrado nenhuma ação com o codigo: #{params[:stock].upcase}"
+        respond_to do |format|
+          format.js { render partial: 'users/result' }
+        end
       end
     else
-      flash[:alert] = 'Por favor entre com o codigo para pesquisar'
-      redirect_to my_portfolio_path
+      flash.now[:alert] = 'Por favor entre com um codigo para pesquisar'
+      respond_to do |format|
+        format.js { render partial: 'users/result' }
+      end
     end
   end
 end
