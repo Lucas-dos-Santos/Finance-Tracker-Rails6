@@ -1,0 +1,6 @@
+%h1.mt-3 Amigos
+
+.row.mt-3 
+ .col-9 
+  - unless @friends.empty?
+   = render 'users/friends_table'

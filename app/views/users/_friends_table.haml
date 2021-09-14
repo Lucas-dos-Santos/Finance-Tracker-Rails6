@@ -1,0 +1,15 @@
+%table.table.table-hover.table-bordered.mt-3.text-center
+ %thead
+  %tr
+   %th{scope: "col"} Nome
+   %th{scope: "col"} Email
+   %th{scope: "col"} Ações
+ %tbody
+  - @friends.each do |friend|
+   %tr
+    %td 
+     = friend.full_name
+    %td
+     = friend.email
+    %td
+     = link_to "Parar de Seguir", "#", method: :delete, class: "btn btn-sm btn-warning", data: {confirm: "Tem certeza que deseja remover?"}
