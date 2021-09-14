@@ -3,19 +3,31 @@
     <%= render 'layouts/messages' %>
   </div>
 </div>
-<% if @friend %>
+<% if @friends %>
   <div class="row">
     <div class="col-9">
-      <div class="card mt-4">
-        <div class="card-header d-flex justify-content-between align-items-center">
-          <strong>Nome:</strong>  friend
-          <strong>Email:</strong>  friend
-          <%= link_to  root_path, class: "btn btn-sm btn-success" do %>
-            <%= fa_icon 'user-plus' %>
-            Seguir
-          <% end %>
+      <% @friends.each do |friend| %>
+        <div class="card mt-4">
+          <div class="card-header d-flex justify-content-between">
+            <div class="">
+              <strong>Nome:</strong> <%= friend.full_name %>
+            </div>
+            <div class="">
+              <strong>Email:</strong> <%= friend.email %>
+            </div>
+            <div>
+              <%= link_to  root_path, class: "btn btn-sm btn-outline-primary" do %>
+                <%= fa_icon 'eye' %>
+                Ver Perfil
+              <% end %>
+              <%= link_to  root_path, class: "btn btn-sm btn-success" do %>
+                <%= fa_icon 'user-plus' %>
+                Seguir
+              <% end %>
+            </div>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 <% end %>
