@@ -1,0 +1,22 @@
+%h1.mt-3 Detalhes do Usuário
+
+%hr
+- if current_user.not_friends?(@user.id) && current_user != @user
+ = link_to friendships_path(friend: @user), method: :post, class: "btn btn-sm btn-outline-success" do
+  = fa_icon 'user-plus'
+  Seguir
+- else
+ %button{class: "btn btn-sm btn-outline-secondary", disabled: true}
+  = fa_icon 'user-plus'
+  Seguir
+%h4.fw-normal.mt-3
+ = "Nome: #{@user.full_name}"
+
+%h4.fw-normal.mt-3
+ = "Email: #{@user.email}"
+%h2.mt-3 Ações Rastreadas
+%hr
+- if !@tracked_stocks.empty?
+ = render 'users/table'
+- else
+ %h5.fw-normal Este Usuário não está rastreando nenhuma ação

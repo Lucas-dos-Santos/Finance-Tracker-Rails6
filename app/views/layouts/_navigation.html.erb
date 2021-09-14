@@ -16,6 +16,11 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
+                <%= link_to current_user, class: "dropdown-item" do %>
+                  <%= fa_icon 'eye' %>  Ver 
+                <% end %>
+              </li>
+              <li>
                 <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
                   <%= fa_icon 'edit', class: 'text-danger' %>  Editar
                 <% end %>
@@ -23,23 +28,17 @@
               <li><hr class="dropdown-divider"></li>
               <li>
                 <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-                  <%= fa_icon 'sign-out'%>
+                  <%= fa_icon 'sign-out', class: "text-primary" %>
                   Logout
                 <% end %>
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <div class="nav-link text-dark" >
-              <%= fa_icon 'user'%>
-              <%= current_user.full_name %>
-            </div>
-          </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <div class="nav-link text-dark" >
+          <%= fa_icon 'user-circle'%>
+          <%= current_user.full_name %>
+        </div>
       </div>
     <% end %>
   </div>

@@ -12,4 +12,9 @@
     %td
      = friend.email
     %td
+     = link_to  user_path(friend), class: "btn btn-sm btn-outline-primary me-2" do
+      = fa_icon 'eye'
+      Ver Perfil
      = link_to "Parar de Seguir", friendship_path(friend), method: :delete, class: "btn btn-sm btn-warning", data: {confirm: "Tem certeza que deseja remover?"}
+            
+     

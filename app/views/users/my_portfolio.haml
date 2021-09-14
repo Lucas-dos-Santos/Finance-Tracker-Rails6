@@ -1,5 +1,5 @@
 %h1.mt-3 Meu Portfolio
-
+%hr
 .search-area
  %h3.mb-3 Procurar Ações
 = form_tag search_stock_path, remote: true, method: :get do
@@ -14,3 +14,5 @@
 
 - if !@tracked_stocks.empty?
  = render 'users/table'
+- else
+ %h5.fw-normal.mt-3 Você não está rastreando nenhuma ação
