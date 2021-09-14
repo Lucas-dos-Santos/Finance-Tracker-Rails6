@@ -1,0 +1,18 @@
+%h1.mt-3.text-center Meus amigos
+
+.d-flex.justify-content-center
+ %table.table.table-hover.table-bordered.mt-3.text-center.w-75
+  %thead
+   %tr
+    %th{scope: "col"} Nome
+    %th{scope: "col"} Email
+    %th{scope: "col"} 
+  %tbody
+   - @friends.each do |friend|
+    %tr
+     %td 
+      = friend.full_name
+     %td
+      = friend.email
+     %td
+      = link_to "Remover", "#", method: :delete, class: "btn btn-sm btn-outline-danger", data: {confirm: "Tem certeza que deseja remover?"} 
