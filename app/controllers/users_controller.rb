@@ -28,4 +28,8 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  def destroy; end
+
+  def create; end
 end

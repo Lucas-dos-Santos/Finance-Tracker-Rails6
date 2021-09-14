@@ -16,13 +16,20 @@
               <strong>Email:</strong> <%= friend.email %>
             </div>
             <div>
-              <%= link_to  root_path, class: "btn btn-sm btn-outline-primary" do %>
+              <%= link_to  friends_path(friend), class: "btn btn-sm btn-outline-primary" do %>
                 <%= fa_icon 'eye' %>
                 Ver Perfil
               <% end %>
-              <%= link_to  root_path, class: "btn btn-sm btn-success" do %>
-                <%= fa_icon 'user-plus' %>
-                Seguir
+              <% if current_user.not_friends?(friend.id) %>
+                <%= link_to friendships_path(friend: friend), method: :post, class: "btn btn-sm btn-outline-success" do %>
+                  <%= fa_icon 'user-plus' %>
+                  Seguir
+                <% end %>
+              <% else %>
+                <button class="btn btn-sm btn-outline-secondary" disabled>
+                  <%= fa_icon 'user-plus' %>
+                  Seguir
+                </button>
               <% end %>
             </div>
           </div>

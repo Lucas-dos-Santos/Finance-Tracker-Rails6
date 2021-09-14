@@ -12,4 +12,4 @@
     %td
      = friend.email
     %td
-     = link_to "Parar de Seguir", "#", method: :delete, class: "btn btn-sm btn-warning", data: {confirm: "Tem certeza que deseja remover?"}
+     = link_to "Parar de Seguir", friendship_path(friend), method: :delete, class: "btn btn-sm btn-warning", data: {confirm: "Tem certeza que deseja remover?"}
