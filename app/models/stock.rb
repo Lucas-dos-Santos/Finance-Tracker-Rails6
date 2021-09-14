@@ -17,7 +17,7 @@ class Stock < ApplicationRecord
     IEX::Api::Client.new(
       publishable_token: Rails.application.credentials.publishable_token,
       secret_token: Rails.application.credentials.secret_token,
-      endpoint: 'https://sandbox.iexapis.com/v1'
+      endpoint: 'https://cloud.iexapis.com/v1'
     )
   end
 
